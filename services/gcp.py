@@ -7,7 +7,9 @@ def get_secret() -> str:
     """
     Retrieve secret from GCP Secret Manager
     """
-    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = PATH
+    if PATH:
+        os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = PATH
+        
     secret_client = secretmanager.SecretManagerServiceClient()
     name = secret_client.secret_version_path(
         project="733286937483",
