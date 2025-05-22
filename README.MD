@@ -5,7 +5,7 @@ This project is part of the Agent Development Kit Hackthon create by google.
 
 We will be using this to write a simple app using ai agents to write politicians biographies.
 
-It will consist on 4 agents which will work together to write biographies based on a given name.
+It will consist on 4 agents (Planer, Researcher, Biography Writer, Reviewer) which will work together to write biographies based on a given name.
 
 ## Diagram
 ```mermaid
