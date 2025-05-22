@@ -18,6 +18,21 @@ flowchart LR
   
 ```
 
+## Key Features
+### Tools:
+
+- **Web_search:**
+- **Scraper:**
+
+### Agents:
+
+- **Planer:**
+- **Researcher:**
+- **Biography Writer:**
+- **Reviewer:**
+
+
+
 ## Requirements
 
 The biographies should contain the following sections:
