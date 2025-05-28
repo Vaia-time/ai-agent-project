@@ -1,14 +1,14 @@
 from google.cloud import secretmanager
 import os
 
-PATH = os.get('PATH')
+#PATH = os.get('PATH', None)
 
 def get_secret() -> str:
     """
     Retrieve secret from GCP Secret Manager
     """
-    if PATH:
-        os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = PATH
+   # if PATH:
+   #     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = PATH
         
     secret_client = secretmanager.SecretManagerServiceClient()
     name = secret_client.secret_version_path(
