@@ -2,29 +2,29 @@ import datetime
 from zoneinfo import ZoneInfo
 from google.adk.agents import Agent
 
-def get_weather(city: str) -> dict:
-    """Retrieves the current weather report for a specified city.
+def get_biographies(name: str) -> dict:
+    """Retrieves the biographies from a open source media"""
 
     Args:
-        city (str): The name of the city for which to retrieve the weather report.
+        name (str): The name of the politician for which to retrieve the biographie.
 
     Returns:
-        dict: status and result or error msg.
+        dict: a sintentized biographie of the given politician.   
+
     """
-    if city.lower() == "new york":
+    if name.lower() == "Pedro Sanchez":
         return {
             "status": "success",
             "report": (
-                "The weather in New York is sunny with a temperature of 25 degrees"
-                " Celsius (77 degrees Fahrenheit)."
+                "Pedro Sanchez, was born in ... on ....  He as politician from PSOE"
             ),
         }
     else:
         return {
             "status": "error",
-            "error_message": f"Weather information for '{city}' is not available.",
-        }
+            "error_message": f" The is no information available for '{name}'"
 
+    """
 
 def get_current_time(city: str) -> dict:
     """Returns the current time in a specified city.
@@ -55,13 +55,12 @@ def get_current_time(city: str) -> dict:
 
 
 root_agent = Agent(
-    name="weather_time_agent",
+    name="biographical_agent",
     model="gemini-2.0-flash",
     description=(
-        "Agent to answer questions about the time and weather in a city."
+        "Agent to generate politicians biographies"
     ),
     instruction=(
-        "You are a helpful agent who can answer user questions about the time and weather in a city."
-    ),
-    tools=[get_weather, get_current_time],
+        "You are agent specialized in generating up to date politicians biographies",
+    tools=[get_biographies, get_from_different_sources],
 )
