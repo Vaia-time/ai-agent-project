@@ -1,3 +1,7 @@
+langchain-community
+tavily-python
+python-dotenv 
+
 # gcp
 google-adk==0.5.0
 google-cloud-secret-manager==2.22.0
